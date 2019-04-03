@@ -6,7 +6,8 @@
   },
   "dependencies": {
     "express": "4.16.3",
-    "marko": "4.13.4-1"
+    "marko": "4.13.4-1",
+    "sqlite3": "4.0.2"
   },
   "description": "A simple project based on Alura's Node.js course.",
   "devDependencies": {
@@ -21,7 +22,7 @@
     "url": "https://github.com/rfcaio/node-alura-course.git"
   },
   "scripts": {
-    "start": "./node_modules/.bin/nodemon index.js --ignore *.marko.js"
+    "start": "./node_modules/.bin/nodemon ./src/index.js --ignore *.marko.js"
   },
   "version": "1.0.0"
 }

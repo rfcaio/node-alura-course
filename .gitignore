@@ -53,3 +53,5 @@ typings/
 .fusebox/
 
 *.marko.js
+
+*.db
