@@ -51,3 +51,5 @@ typings/
 .serverless
 
 .fusebox/
+
+*.marko.js

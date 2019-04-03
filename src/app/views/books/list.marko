@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Books</title>
+</head>
+<body>
+  <h1>List of books</h1>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr for (book in data.books)>
+        <td>${book.title}</td>
+        <td>${book.author}</td>
+        <td>$ ${book.price}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

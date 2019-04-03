@@ -4,7 +4,10 @@
     "name": "Caio Rodrigues Fernandes",
     "url": "https://github.com/rfcaio"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "4.16.3",
+    "marko": "4.13.4-1"
+  },
   "description": "A simple project based on Alura's Node.js course.",
   "devDependencies": {
     "nodemon": "1.18.4"
@@ -18,7 +21,7 @@
     "url": "https://github.com/rfcaio/node-alura-course.git"
   },
   "scripts": {
-    "start": "./node_modules/.bin/nodemon index.js"
+    "start": "./node_modules/.bin/nodemon index.js --ignore *.marko.js"
   },
   "version": "1.0.0"
 }
