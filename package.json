@@ -5,6 +5,7 @@
     "url": "https://github.com/rfcaio"
   },
   "dependencies": {
+    "body-parser": "1.18.3",
     "express": "4.16.3",
     "marko": "4.13.4-1",
     "sqlite3": "4.0.2"

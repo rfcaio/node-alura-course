@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Update book</title>
+</head>
+<body>
+  <h1>Update book</h1>
+
+  <nav>
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/book">Books</a>
+      </li>
+    </ul>
+  </nav>
+
+  <form action="/book/update/${data.book.id}" method="POST" novalidate>
+    <div>
+      <label for="id">ID</label>
+      <input id="id" name="id" readonly type="number" value="${data.book.id}">
+    </div>
+
+    <div>
+      <label for="author">Author</label>
+      <input id="author" name="author" type="text" value="${data.book.author}">
+    </div>
+
+    <div>
+      <label for="title">Title</label>
+      <input id="title" name="title" type="text" value="${data.book.title}">
+    </div>
+
+    <div>
+      <label for="price">Price</label>
+      <input id="price" min="0" name="price" type="number" value="${data.book.price}">
+    </div>
+
+    <div>
+      <label for="description">Description</label>
+      <textarea
+        cols="50"
+        id="description"
+        name="description"
+        rows="10">${data.book.description}</textarea>
+    </div>
+
+    <input type="submit" value="Update">
+  </form>
+</body>
+</html>

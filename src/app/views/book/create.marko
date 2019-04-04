@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>New book</title>
+</head>
+<body>
+  <h1>New book</h1>
+
+  <nav>
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/book">Books</a>
+      </li>
+    </ul>
+  </nav>
+
+  <form action="/book/create" method="POST" novalidate>
+    <div>
+      <label for="author">Author</label>
+      <input id="author" name="author" type="text">
+    </div>
+
+    <div>
+      <label for="title">Title</label>
+      <input id="title" name="title" type="text">
+    </div>
+
+    <div>
+      <label for="price">Price</label>
+      <input id="price" min="0" name="price" type="number">
+    </div>
+
+    <div>
+      <label for="description">Description</label>
+      <textarea cols="50" id="description" name="description" rows="10"></textarea>
+    </div>
+
+    <input type="submit" value="Create">
+  </form>
+</body>
+</html>
