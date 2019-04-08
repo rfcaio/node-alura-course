@@ -12,4 +12,14 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 
+require('../app/routes')(app)
+
+app.use((req, res, next) => {
+  return res.status(404).marko(require('../app/views/error/404.marko'))
+})
+
+app.use((error, req, res, next) => {
+  return res.status(500).marko(require('../app/views/error/500.marko'))
+})
+
 module.exports = app
