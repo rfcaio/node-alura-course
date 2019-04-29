@@ -1,4 +1,5 @@
 
+/* eslint-disable prefer-promise-reject-errors */
 class Book {
   constructor (database) {
     this._database = database

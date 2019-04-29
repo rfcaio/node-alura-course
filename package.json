@@ -12,9 +12,22 @@
   },
   "description": "A simple project based on Alura's Node.js course.",
   "devDependencies": {
+    "eslint": "5.16.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-import": "2.17.2",
+    "eslint-plugin-node": "8.0.1",
+    "eslint-plugin-promise": "4.1.1",
+    "eslint-plugin-standard": "4.0.0",
+    "husky": "1.0.0",
     "nodemon": "1.18.4"
   },
   "homepage": "https://github.com/rfcaio/node-alura-course#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
+    }
+  },
   "license": "MIT",
   "name": "node-alura-course",
   "private": true,
@@ -23,6 +36,7 @@
     "url": "https://github.com/rfcaio/node-alura-course.git"
   },
   "scripts": {
+    "lint": "./node_modules/.bin/eslint src/",
     "start": "./node_modules/.bin/nodemon ./src/index.js --ignore *.marko.js"
   },
   "version": "1.0.0"
