@@ -8,6 +8,12 @@
 <body>
   <h1>New book</h1>
 
+  <div if(data.validationErrors)>
+    <div for(error in data.validationErrors)>
+      ${error.param} - ${error.msg}
+    </div>
+  </div>
+
   <nav>
     <ul>
       <li>
@@ -22,22 +28,22 @@
   <form action="/book/create" method="POST" novalidate>
     <div>
       <label for="author">Author</label>
-      <input id="author" name="author" type="text">
+      <input id="author" name="author" type="text" value="${data.book.author}">
     </div>
 
     <div>
       <label for="title">Title</label>
-      <input id="title" name="title" type="text">
+      <input id="title" name="title" type="text" value="${data.book.title}">
     </div>
 
     <div>
       <label for="price">Price</label>
-      <input id="price" min="0" name="price" type="number">
+      <input id="price" min="0" name="price" type="number" value="${data.book.price}">
     </div>
 
     <div>
       <label for="description">Description</label>
-      <textarea cols="50" id="description" name="description" rows="10"></textarea>
+      <textarea cols="50" id="description" name="description" rows="10">${data.book.description}</textarea>
     </div>
 
     <input type="submit" value="Create">

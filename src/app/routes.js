@@ -1,3 +1,4 @@
+const { check, validationResult } = require('express-validator/check')
 
 const database = require('../config/database')
 const Book = require('./dao/book')
@@ -18,10 +19,28 @@ module.exports = app => {
   })
 
   app.get('/book/create', (req, res) => {
-    res.marko(require('./views/book/create.marko'))
+    let book = {
+      author: '',
+      description: '',
+      price: '',
+      title: ''
+    }
+    res.marko(require('./views/book/create.marko'), { book })
   })
 
-  app.post('/book/create', (req, res) => {
+  app.post('/book/create', [
+    check('title').isLength({ min: 5 }).withMessage('Title is too short.'),
+    check('price').isCurrency().withMessage('Price is a currency field.')
+  ], (req, res) => {
+    const errors = validationResult(req)
+
+    if (!errors.isEmpty()) {
+      return res.marko(require('./views/book/create.marko'), {
+        book: req.body,
+        validationErrors: errors.array()
+      })
+    }
+
     new Book(database).create(req.body)
       .then(response => {
         res.redirect('/book')
