@@ -61,6 +61,7 @@ class BookController {
 
   static routes () {
     return {
+      auth: '/book*',
       create: '/book/create',
       delete: '/book/delete/:id',
       list: '/book',
