@@ -14,6 +14,17 @@ database.serialize(() => {
       title TEXT NOT NULL
     )
   `)
+
+  database.run(`
+    CREATE TABLE IF NOT EXISTS user (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name VARCHAR(40) NOT NULL UNIQUE,
+      email VARCHAR(255) NOT NULL UNIQUE,
+      password VARCHAR(255) NOT NULL
+    )
+  `)
+
+  // database.run(`INSERT INTO user (name, email, password) VALUES ('John Doe', 'john@mail.com', '123456')`)
 })
 
 process.on('SIGINT', () => {

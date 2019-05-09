@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 
+require('./session')(app)
 require('../app/routes')(app)
 
 app.use((req, res, next) => {
